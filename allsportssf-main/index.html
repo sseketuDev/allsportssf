@@ -3,65 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AllSports SF - Tienda de implementos deportivos, indumentaria personalizada y equipamiento deportivo en San Felipe, V Región. Uniformes para equipos de fútbol, accesorios deportivos y más.">
-    <meta name="keywords" content="implementos deportivos, uniformes personalizados, equipamiento deportivo, San Felipe, V Región, indumentaria deportiva, balones, trofeos">
-    <meta name="author" content="AllSports SF">
-    <meta name="theme-color" content="#E63946">
-    <meta property="og:title" content="AllSports SF - Implementos Deportivos Premium V Región">
-    <meta property="og:description" content="Somos tu tienda de confianza para implementos deportivos, uniformes personalizados y equipamiento profesional en San Felipe.">
-    <meta property="og:type" content="business.business">
-    <meta property="og:url" content="https://allsportssf.cl">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="Spanish">
-    <title>AllSports SF | Implementos Deportivos Premium - San Felipe V Región</title>
-    <link rel="canonical" href="https://allsportssf.cl">
+    <title>AllSports SF - Implementos Deportivos V Región</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- ============================================================
-         AJUSTES DE IMÁGENES DE PRODUCTO
-         Va aquí (después de style.css) para tener prioridad y garantizar
-         que las fotos se vean parejas aunque el CSS externo falle.
-         Si luego quieres, mueve estas reglas a tu style.css.
-    ============================================================ -->
-    <style>
-        /* Contenedor de la imagen del producto */
-        .product-card .product-image {
-            position: relative;
-            width: 100%;
-            height: 240px;            /* altura pareja para todas las fotos */
-            overflow: hidden;
-            border-radius: 12px 12px 0 0;
-            background-color: #f0f0f0; /* color de respaldo mientras carga */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* La foto real: llena el contenedor sin deformarse */
-        .product-card .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;        /* recorta y centra, no estira */
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        /* Pequeño zoom al pasar el mouse: se ve más profesional */
-        .product-card:hover .product-image img {
-            transform: scale(1.06);
-        }
-
-        /* El ícono solo aparece como respaldo si la foto NO carga */
-        .product-card .product-image i {
-            position: absolute;
-            font-size: 3.5rem;
-            color: #c0c0c0;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navegación -->
@@ -104,8 +52,6 @@
                     <a href="#productos" class="btn btn-primary btn-large">Ver Productos <i class="fas fa-arrow-right"></i></a>
                     <a href="#contacto" class="btn btn-secondary btn-large">Contactar <i class="fas fa-envelope"></i></a>
                 </div>
-                <!-- AJUSTA estos números a tus cifras reales. Un 100% de satisfacción
-                     resta credibilidad; algo como 98% suele creerse más. -->
                 <div class="hero-stats">
                     <div class="stat">
                         <span class="stat-number" data-count="50">0</span>
@@ -121,8 +67,8 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image" style="background-image: url('balones.jpg');">
-                <!-- Imagen de balones deportivos -->
+            <div class="hero-image" style="background-image: url('images/hero.jpg');">
+                <!-- Reemplaza la URL por tu propia foto -->
             </div>
         </div>
         
@@ -181,8 +127,8 @@
     <!-- Sección Productos -->
     <section class="products" id="productos">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Productos <span class="highlight" style="color: #F1A208;">Destacados</span></h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Calidad y variedad para todos los deportes</p>
+            <h2 class="section-title">Productos <span class="highlight">Destacados</span></h2>
+            <p class="section-subtitle">Calidad y variedad para todos los deportes</p>
             
             <div class="categories">
                 <button class="category-btn active" data-category="all">Todos</button>
@@ -194,9 +140,8 @@
             
             <div class="products-grid">
                 <div class="product-card" data-category="futbol">
-                    <div class="product-image futbol">
-                        <img src="balonesdefutbol.jpg" alt="Balones de fútbol profesionales AllSports SF" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                        <i class="fas fa-futbol" style="display:none;"></i>
+                    <div class="product-image futbol" style="background-image: url('images/product-ball.jpg');">
+                        <i class="fas fa-futbol"></i>
                     </div>
                     <h3>Balones Profesionales</h3>
                     <p>Balones de fútbol oficial para entrenamiento y competición.</p>
@@ -208,9 +153,8 @@
                 </div>
                 
                 <div class="product-card" data-category="indumentaria">
-                    <div class="product-image indumentaria">
-                        <img src="poleraretro.jpg" alt="Uniforme deportivo personalizado para equipos" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                        <i class="fas fa-tshirt" style="display:none;"></i>
+                    <div class="product-image indumentaria" style="background-image: url('images/product-uniform.jpg');">
+                        <i class="fas fa-tshirt"></i>
                     </div>
                     <h3>Uniforme Personalizado</h3>
                     <p>Diseño y confección de uniformes para equipos.</p>
@@ -222,9 +166,8 @@
                 </div>
                 
                 <div class="product-card" data-category="equipamiento">
-                    <div class="product-image equipamiento">
-                        <img src="kitdeprimerosauzilios.jpg" alt="Kit de equipamiento para entrenadores" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                        <i class="fas fa-vest" style="display:none;"></i>
+                    <div class="product-image equipamiento" style="background-image: url('images/product-equipment.jpg');">
+                        <i class="fas fa-vest"></i>
                     </div>
                     <h3>Equipamiento Entrenador</h3>
                     <p>Kits completos para entrenadores y cuerpo técnico.</p>
@@ -236,9 +179,8 @@
                 </div>
                 
                 <div class="product-card" data-category="futbol">
-                    <div class="product-image futbol">
-                        <img src="botasdegutbol.jpg" alt="Zapatillas de fútbol para distintas superficies" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                        <i class="fas fa-shoe-prints" style="display:none;"></i>
+                    <div class="product-image futbol" style="background-image: url('images/product-shoes.jpg');">
+                        <i class="fas fa-shoe-prints"></i>
                     </div>
                     <h3>Zapatillas de Fútbol</h3>
                     <p>Calzado deportivo para diferentes tipos de superficies.</p>
@@ -250,9 +192,8 @@
                 </div>
                 
                 <div class="product-card" data-category="accesorios">
-                    <div class="product-image accesorios">
-                        <img src="trofeosperso.jpg" alt="Medallas y trofeos personalizados para torneos" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                        <i class="fas fa-medal" style="display:none;"></i>
+                    <div class="product-image accesorios" style="background-image: url('images/product-medal.jpg');">
+                        <i class="fas fa-medal"></i>
                     </div>
                     <h3>Medallas y Trofeos</h3>
                     <p>Premiación personalizada para torneos y competencias.</p>
@@ -264,9 +205,8 @@
                 </div>
                 
                 <div class="product-card" data-category="indumentaria">
-                    <div class="product-image indumentaria">
-                        <img src="varios2.jpg" alt="Accesorios personalizados con logo del equipo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                        <i class="fas fa-vest-patches" style="display:none;"></i>
+                    <div class="product-image indumentaria" style="background-image: url('images/product-accessories.jpg');">
+                        <i class="fas fa-vest-patches"></i>
                     </div>
                     <h3>Accesorios Personalizados</h3>
                     <p>Bolsos, toallas y más con el logo de tu equipo.</p>
@@ -286,22 +226,17 @@
             <h2 class="section-title">Equipos de la <span class="highlight">V Región</span></h2>
             <p class="section-subtitle">Vestimos a equipos de todas las categorías de San Felipe y la Quinta Región</p>
             
-            <!-- ============================================================
-                 REEMPLAZA estos 3 bloques con equipos/clubes REALES a los que
-                 les hayas hecho trabajos (pide permiso para usar su nombre).
-                 Nada vende más confianza que un cliente local de verdad.
-            ============================================================ -->
             <div class="teams-slider">
                 <div class="team-card">
                     <div class="team-logo">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Nombre del Club</h3>
+                    <h3>Equipo Ejemplo Alpha</h3>
                     <p>Categoría: Adultos</p>
                     <span class="team-category">Fútbol Senior</span>
                     <div class="team-projects">
-                        <span><i class="fas fa-tshirt"></i> Uniformes personalizados</span>
-                        <span><i class="fas fa-futbol"></i> Implementos deportivos</span>
+                        <span><i class="fas fa-tshirt"></i> Ejemplo: Uniformes personalizados</span>
+                        <span><i class="fas fa-futbol"></i> Ejemplo: Implementos deportivos</span>
                     </div>
                 </div>
 
@@ -309,12 +244,12 @@
                     <div class="team-logo">
                         <i class="fas fa-user-graduate"></i>
                     </div>
-                    <h3>Nombre del Club</h3>
+                    <h3>Equipo Ejemplo Beta</h3>
                     <p>Categoría: Juvenil</p>
                     <span class="team-category">Fútbol Formativo</span>
                     <div class="team-projects">
-                        <span><i class="fas fa-tshirt"></i> Kits de entrenamiento</span>
-                        <span><i class="fas fa-futbol"></i> Balones</span>
+                        <span><i class="fas fa-tshirt"></i> Ejemplo: Kits de entrenamiento</span>
+                        <span><i class="fas fa-futbol"></i> Ejemplo: Balones</span>
                     </div>
                 </div>
 
@@ -322,12 +257,12 @@
                     <div class="team-logo">
                         <i class="fas fa-child"></i>
                     </div>
-                    <h3>Nombre del Club</h3>
+                    <h3>Equipo Ejemplo Gamma</h3>
                     <p>Categoría: Infantil</p>
                     <span class="team-category">Fútbol Infantil</span>
                     <div class="team-projects">
-                        <span><i class="fas fa-tshirt"></i> Uniformes escolares</span>
-                        <span><i class="fas fa-futbol"></i> Programas formativos</span>
+                        <span><i class="fas fa-tshirt"></i> Ejemplo: Uniformes escolares</span>
+                        <span><i class="fas fa-futbol"></i> Ejemplo: Programas formativos</span>
                     </div>
                 </div>
             </div>
@@ -343,8 +278,8 @@
     <section class="budget" id="presupuesto">
         <div class="container">
             <div class="budget-content">
-                <h2 class="section-title" style="color: white;">Solicita tu <span class="highlight" style="color: #F1A208;">Presupuesto</span></h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Personalizado para tu equipo o proyecto deportivo</p>
+                <h2 class="section-title">Solicita tu <span class="highlight">Presupuesto</span></h2>
+                <p class="section-subtitle">Personalizado para tu equipo o proyecto deportivo</p>
                 
                 <form class="budget-form" id="budgetForm">
                     <div class="form-row">
@@ -437,17 +372,17 @@
     </section>
 
     <!-- Sección Nosotros -->
-    <section class="nosotros" id="nosotros" style="padding: 5rem 0; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+    <section class="nosotros" id="nosotros" style="padding: 5rem 0; background-color: #f9f9f9;">
         <div class="container">
-            <h2 class="section-title">Sobre <span class="highlight" style="color: #E63946;">Nosotros</span></h2>
+            <h2 class="section-title">Sobre <span class="highlight">Nosotros</span></h2>
             
             <div style="max-width: 900px; margin: 0 auto; text-align: center; color: var(--gray-color); font-size: 1.1rem; line-height: 1.8;">
-                <p style="margin-bottom: 1.5rem;"><strong style="color: #E63946; font-size: 1.2rem;">AllSports</strong> es una marca deportiva nacida como resultado de un proyecto iniciado desde casa en el ño 2010, comenzando principalmente como un pasatiempo. Gracias a la pasión por el deporte y al constante vínculo con el fútbol amateur, en 2024 logramos establecernos formalmente.</p>
+                <p style="margin-bottom: 1.5rem;"><strong>AllSports</strong> es una marca deportiva nacida como resultado de un proyecto iniciado desde casa en el año 2010, comenzando principalmente como un pasatiempo. Gracias a la pasión por el deporte y al constante vínculo con el fútbol amateur, en 2024 logramos establecernos formalmente.</p>
                 <p style="margin-bottom: 3rem;">Nos dedicamos en cuerpo y alma a la confección de indumentaria de primer nivel y a la provisión de equipamiento deportivo. Vestimos y apoyamos tanto al fútbol amateur de la V Región como al ámbito profesional, entregando calidad, compromiso y cercanía a cada equipo y deportista que confía en nosotros.</p>
 
-                <h3 style="font-size: 1.8rem; color: var(--dark-color); margin-bottom: 2rem;">Clientes destacados e <span style="color: #F1A208;">Hitos</span></h3>
+                <h3 style="font-size: 1.8rem; color: var(--dark-color); margin-bottom: 2rem;">Clientes destacados e <span class="highlight">Hitos</span></h3>
                 
-                <div style="text-align: left; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 10px 30px rgba(230, 57, 70, 0.15); border-left: 5px solid #E63946;">
+                <div style="text-align: left; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
                     <div style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
                         <i class="fas fa-trophy" style="color: var(--primary-color); font-size: 1.5rem; margin-top: 5px;"></i>
                         <div>
@@ -609,7 +544,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 AllSports SF - San Felipe, V Región. Todos los derechos reservados.</p>
+                <p>&copy; 2024 AllSports SF - San Felipe, V Región. Todos los derechos reservados.</p>
                 <div class="footer-legals">
                     <a href="#">Términos y Condiciones</a>
                     <a href="#">Política de Privacidad</a>
