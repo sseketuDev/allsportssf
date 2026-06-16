@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Pesca - Aconcagua Deportes</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="senuelos.css">
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20consultar%20sobre%20productos%20de%20pesca" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Main Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container main-header-content">
+            <a href="../index.html" class="logo-container">
+                <div class="logo-text">
+                    <div class="logo-main">ACONCAGUA DEPORTES</div>
+                    <div class="logo-sub">AVENTURA & NATURALEZA</div>
+                </div>
+            </a>
+            
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html" class="nav-link">Inicio</a>
+                <a href="caza.html" class="nav-link">Caza</a>
+                <a href="pezca.html" class="nav-link active">Pesca</a>
+                <a href="kayak.html" class="nav-link">Kayaks</a>
+                <a href="camping.html" class="nav-link">Camping</a>
+                <a href="../index.html#about" class="nav-link">Nosotros</a>
+                <a href="../index.html#map" class="nav-link">Ubicación</a>
+                <a href="../index.html#contact" class="nav-link">Contacto</a>
+            </nav>
+            
+            
+                <div class="header-actions">
+                    <div class="header-search" style="display:flex;align-items:center;gap:8px;">
+                        <input id="headerSearch" type="text" placeholder="Buscar productos..." />
+                        <button class="search-btn" title="Buscar" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+
+                    
+                    <button class="theme-toggle" id="themeToggle" title="Modo oscuro"><i class="fas fa-moon"></i></button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" title="Menú"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Catálogo de <span class="text-gradient">Señuelos</span></h1>
+            <a href="../index.html#categories" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Volver a Categorías
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container section-padding">
+        <!-- Mobile Filter Toggle -->
+        <button class="mobile-filter-toggle" onclick="toggleFilters()">
+            <i class="fas fa-filter"></i> Mostrar Filtros
+        </button>
+
+        <div class="catalog-layout">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar" id="sidebar">
+                <!-- Category Filter -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-list"></i> Categorías</h3>
+                    <div class="filter-group">
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-canas" value="cañas" onchange="applyFilters()">
+                            <label for="cat-canas">Cañas de Pescar</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-reels" value="reels" onchange="applyFilters()">
+                            <label for="cat-reels">Reels</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-anzuelos" value="anzuelos" onchange="applyFilters()">
+                            <label for="cat-anzuelos">Anzuelos</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-lineas" value="líneas" onchange="applyFilters()">
+                            <label for="cat-lineas">Líneas y Sedales</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-señuelos" value="señuelos" onchange="applyFilters()">
+                            <label for="cat-señuelos">Señuelos</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-accesorios" value="accesorios" onchange="applyFilters()">
+                            <label for="cat-accesorios">Accesorios</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Filter -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-tag"></i> Marcas</h3>
+                    <div class="filter-group">
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-daiwa" value="daiwa" onchange="applyFilters()">
+                            <label for="brand-daiwa">Daiwa</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-shimano" value="shimano" onchange="applyFilters()">
+                            <label for="brand-shimano">Shimano</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-penn" value="penn" onchange="applyFilters()">
+                            <label for="brand-penn">Penn</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-abu-garcia" value="abu garcia" onchange="applyFilters()">
+                            <label for="brand-abu-garcia">Abu Garcia</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-okuma" value="okuma" onchange="applyFilters()">
+                            <label for="brand-okuma">Okuma</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-rapala" value="rapala" onchange="applyFilters()">
+                            <label for="brand-rapala">Rapala</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Condition Filter -->
+                <div class="filter-section">
+                    <h3><i class="fas fa-star"></i> Condición</h3>
+                    <div class="filter-group">
+                        <div class="filter-option">
+                            <input type="checkbox" id="cond-new" value="new" onchange="applyFilters()">
+                            <label for="cond-new">Nuevo</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cond-sale" value="sale" onchange="applyFilters()">
+                            <label for="cond-sale">En Oferta</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cond-popular" value="popular" onchange="applyFilters()">
+                            <label for="cond-popular">Más Popular</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main>
+                <!-- Catalog Header -->
+                <div class="catalog-header">
+                    <div class="results-info">
+                        Mostrando <strong id="resultCount">0</strong> productos
+                    </div>
+                    <div class="sort-options">
+                        <label>Ordenar por:</label>
+                        <select id="sortSelect" onchange="sortProducts()">
+                            <option value="relevance">Relevancia</option>
+                            <option value="name-az">Nombre: A-Z</option>
+                            <option value="name-za">Nombre: Z-A</option>
+                            <option value="newest">Más Recientes</option>
+                        </select>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" onclick="setView('grid')">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" onclick="setView('list')">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Filters -->
+                <div class="active-filters" id="activeFilters"></div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Los productos se cargarán dinámicamente aquí -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta ajustar los filtros de búsqueda</p>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- La paginación se generará dinámicamente aquí -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container section-padding">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-main">ACONCAGUA DEPORTES</div>
+                        <div class="logo-sub">AVENTURA & NATURALEZA</div>
+                    </div>
+                    <p class="footer-description">Especialistas en equipamiento premium para caza, pesca y deportes al aire libre. Comprometidos con la calidad, la experiencia y la pasión por la aventura.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">CATÁLOGOS</h3>
+                    <ul class="footer-links">
+                        <li><a href="caza.html"><i class="fas fa-chevron-right"></i> Caza y Tiro Deportivo</a></li>
+                        <li><a href="pezca.html"><i class="fas fa-chevron-right"></i> Pesca Deportiva</a></li>
+                        <li><a href="kayak.html"><i class="fas fa-chevron-right"></i> Kayaks DUKHA</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Accesorios Profesionales</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Ofertas Especiales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">ENLACES RÁPIDOS</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="../index.html#about"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                        <li><a href="../index.html#map"><i class="fas fa-chevron-right"></i> Ubicación</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Política de Garantía</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">CONTACTO</h3>
+                    <ul class="contact-info-footer">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Aconcagua 1234, Providencia, Santiago, Chile</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+56 9 4144 6141</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contacto@aconcaguadeportes.cl</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Vie: 9:00 - 19:00<br>Sáb: 10:00 - 14:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aconcagua Deportes. Todos los derechos reservados. | Desarrollado con pasión por la aventura y la naturaleza</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // ============================================
+        // TEMA OSCURO / CLARO
+        // ============================================
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            htmlElement.classList.add('dark-mode');
+            updateThemeIcon();
+        } else if (savedTheme === 'light') {
+            htmlElement.classList.remove('dark-mode');
+            updateThemeIcon();
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlElement.classList.add('dark-mode');
+            updateThemeIcon();
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark-mode');
+            const isDark = htmlElement.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcon();
+        });
+
+        function updateThemeIcon() {
+            const icon = themeToggle.querySelector('i');
+            if (htmlElement.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                themeToggle.title = 'Modo claro';
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                themeToggle.title = 'Modo oscuro';
+            }
+        }
+
+        // ============================================
+        // HEADER SCROLL EFFECT
+        // ============================================
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // MENÚ MÓVIL
+        // ============================================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // ============================================
+        // CATÁLOGO DE PRODUCTOS - PESCA
+        // ============================================
+        const fishingData = [
+            {id: 1, name: "Caña Shimano Stimula 8'6\" Spinning", brand: "shimano", category: "cañas", condition: "popular", image: "https://www.devotocamping.com.ar/cache_images/2/a/7/b/e/2a7be1aa9e88f67b84d4b9e30a40b5072e91dacb--.jpg", description: "Caña versátil de 2 piezas, ideal para principiantes y pescadores intermedios. Excelente acción y sensibilidad."},
+            {id: 2, name: "Caña Daiwa Aird-X 7'0\" Baitcasting", brand: "daiwa", category: "cañas", condition: "new", image: "https://m.media-amazon.com/images/I/51pdv6seheL._AC_UF350,350_QL80_.jpg", description: "Tecnología HVF para mejor sensibilidad y potencia. Ideal para lanzamiento de precisión."},
+            {id: 3, name: "Caña Penn Battle III 7'0\" Surf", brand: "penn", category: "cañas", condition: "new", image: "https://m.media-amazon.com/images/I/719OT7gg-CL.jpg", description: "Diseñada específicamente para pesca en agua salada desde la orilla. Gran poder y durabilidad."},
+            {id: 4, name: "Caña Abu Garcia Vendetta 6'6\"", brand: "abu garcia", category: "cañas", condition: "sale", image: "https://www.rhodani.com/377428-large_default/cana-abu-garcia-vendetta-spinning.jpg", description: "Blank de carbono 30-ton, guías de alúmina. Excelente relación calidad-precio."},
+            {id: 5, name: "Reel Shimano Stradic 4000 FL", brand: "shimano", category: "reels", condition: "new", image: "https://cdnx.jumpseller.com/pesca-y-caza-wolfsport/image/21540820/resize/540/600?1642093234", description: "Reel de spinning de alta gama con sistema Hagane Body y MicroModule Gear II."},
+            {id: 6, name: "Reel Daiwa BG 5000", brand: "daiwa", category: "reels", condition: "sale", image: "https://http2.mlstatic.com/D_NQ_NP_770513-MLA99865248779_112025-O.webp", description: "Cuerpo de aluminio maquinado, perfecto para pesca en agua salada. Gran capacidad de línea."},
+            {id: 7, name: "Reel Penn Fierce III 6000", brand: "penn", category: "reels", condition: "popular", image: "https://academy.scene7.com/is/image/academy/fishing-reels/penn-fierce-iv-live-liner-spinning-reel-frciv2500ll-/6b7300a0-d193-41b9-8ad7-fcce5780ce04?$pdp-mobile-gallery-ng$", description: "Tecnología HT-100, cuerpo sellado. Ideal para pesca costera y en kayak."},
+            {id: 8, name: "Reel Okuma Ceymar C-40", brand: "okuma", category: "reels", condition: "sale", image: "https://i0.wp.com/www.salmosport.cl/wp-content/uploads/Ceymar-c40.jpg?fit=900%2C900&ssl=1", description: "Excelente reel para principiantes, suave operación y buen rendimiento general."},
+            {id: 9, name: "Set Anzuelos Eagle Claw L417 50pcs", brand: "eagle claw", category: "anzuelos", condition: "popular", image: "https://cdnx.jumpseller.com/pescaaventura/image/22181006/resize/1200/1200?1654808520", description: "Kit completo de anzuelos L417 en diferentes tamaños. Acero de alta calidad."},
+            {id: 10, name: "Anzuelos Circle Hook Mustad 2/0 25pcs", brand: "mustad", category: "anzuelos", condition: "new", image: "https://www.gonzalogalan.com.ar/wp-content/uploads/2023/05/ANZUELO-CIRCULAR-MUSTAD-39931NP-BN.jpg", description: "Anzuelos circulares que reducen daños a los peces. Ideal para pesca con carnada viva."},
+            {id: 11, name: "Anzuelos Tru-Turn 1/0 30pcs", brand: "eagle claw", category: "anzuelos", condition: "popular", image: "https://i.ebayimg.com/images/g/rzUAAOSwi2plw0ci/s-l1200.webp", description: "Diseño especial que gira naturalmente en la boca del pez. Mayor tasa de captura."},
+            {id: 12, name: "Línea Trenzada Power Pro 150m 30lb", brand: "power pro", category: "líneas", condition: "sale", image: "https://i.ebayimg.com/images/g/8YsAAOSwwBViGAbX/s-l1200.webp", description: "Línea trenzada de alta sensibilidad, cero estiramiento. Color verde musgo."},
+            {id: 13, name: "Sedal Monofilamento Berkley Trilene XL", brand: "berkley", category: "líneas", condition: "popular", image: "https://http2.mlstatic.com/D_Q_NP_903587-CBT88542478990_072025-O.webp", description: "Excelente manejo, baja memoria. Ideal para spinning y baitcasting."},
+            {id: 14, name: "Línea Fluorocarbon Seaguar Red Label", brand: "seaguar", category: "líneas", condition: "new", image: "https://m.media-amazon.com/images/I/81bf6wV50qL._AC_SL1500_.jpg", description: "Fluorocarbon de alta calidad, prácticamente invisible bajo el agua."},
+            {id: 15, name: "Señuelo Rapala Original Floater F11", brand: "rapala", category: "señuelos", condition: "new", image: "https://dojiw2m9tvv09.cloudfront.net/10742/product/022677000503-rapala-original-floater-9cm-b5484.jpg", description: "Clásico señuelo flotante con acción de natación realista. Atrae depredadores."},
+            {id: 16, name: "Señuelo Popper Yo-Zuri 15cm", brand: "yo-zuri", category: "señuelos", condition: "popular", image: "https://http2.mlstatic.com/D_Q_NP_2X_629741-MLC96319976907_102025-P-senuelo-de-pesca-big-popper-alta-calidad-83g-165mm.webp", description: "Señuelo surface que crea ruido y salpicaduras. Ideal para robalos y sierras."},
+            {id: 17, name: "Jig de Pesca Bucktail 1oz 5 Colores", brand: "spro", category: "señuelos", condition: "sale", image: "https://bassar.mx/wp-content/uploads/3632941026.jpg", description: "Pack de 5 jigs bucktail en diferentes colores. Perfectos para fondo y medias aguas."},
+            {id: 18, name: "Señuelo Crankbait Strike King 4.5cm", brand: "strike king", category: "señuelos", condition: "popular", image: "https://http2.mlstatic.com/D_NQ_NP_635206-CBT53944716297_022023-O.webp", description: "Crankbait de natación profunda con sonajero interno. Excelente para truchas."},
+            {id: 19, name: "Caja de Pesca Plano 3600", brand: "plano", category: "accesorios", condition: "new", image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTrZRZ59wQKw4sPJu5KbK8Ejh5Dfg1MU2xz23ljk_r0D1pUiN5v74-a-gVwox1rLPtNANaq7yHGI6gVAmEDu8uCKzNUHtlo5qOToIGB_40K7Ubkret2xSja0u8", description: "Caja organizadora con divisores ajustables. Compacta y resistente."},
+            {id: 20, name: "Red de Pesca Nylon Frabill 6'", brand: "frabill", category: "accesorios", condition: "sale", image: "https://http2.mlstatic.com/D_NQ_NP_849120-CBT85336119236_062025-O.webp", description: "Red plegable con mango extendible. Malla knotless para no dañar los peces."},
+            {id: 21, name: "Chaleco de Pesca Fishpond Thunderhead", brand: "fishpond", category: "accesorios", condition: "new", image: "https://fishpondusa.com/cdn/shop/products/thunderhead_chestpack_front_2_1500x.jpg?v=1650563406", description: "Chaleco técnico con múltiples bolsillos, portaseñuelos y sistema de hidratación."},
+            {id: 22, name: "Pinzas de Pesca Booms 20cm", brand: "booms", category: "accesorios", condition: "popular", image: "https://ae01.alicdn.com/kf/S71da590d140d423f846b7ba96b6df439B.jpg", description: "Pinzas largas de acero inoxidable, corta líneas y extrae anzuelos."},
+            {id: 23, name: "Balanza Digital Rapala 25kg", brand: "rapala", category: "accesorios", condition: "new", image: "https://www.dorhunt.cl/cdn/shop/files/rapala-digital-scale_700x700.jpg?v=1702132941", description: "Balanza digital precisa hasta 25kg. Incluye gancho y función de tara."},
+            {id: 24, name: "Navaja de Pesca Gerber River Shorty", brand: "gerber", category: "accesorios", condition: "popular", image: "https://assets.altaventa.cl/sherpa/1421105857.jpg", description: "Navaja compacta resistente al agua, ideal para filetear y preparar carnadas."}
+        ];
+
+        let currentPage = 1;
+        const productsPerPage = 12;
+        let filteredProducts = [...fishingData];
+        let currentView = 'grid';
+
+        function initCatalog() {
+            renderProducts();
+            updatePagination();
+            updateResultCount();
+            AOS.init({duration: 1000, once: true, offset: 100});
+        }
+
+        function renderProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+            if (productsToShow.length === 0) {
+                document.getElementById('emptyState').style.display = 'block';
+                productsGrid.style.display = 'none';
+                return;
+            }
+
+            document.getElementById('emptyState').style.display = 'none';
+            productsGrid.style.display = 'grid';
+
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.setAttribute('data-category', product.category);
+                productCard.setAttribute('data-brand', product.brand);
+                productCard.setAttribute('data-condition', product.condition);
+                
+                let badgeClass = '';
+                let badgeText = ''; 
+                
+                if (product.condition === 'new') {
+                    badgeClass = 'new';
+                    badgeText = 'Nuevo';
+                } else if (product.condition === 'sale') {
+                    badgeClass = 'sale';
+                    badgeText = 'Oferta';
+                } else {
+                    badgeClass = 'popular';
+                    badgeText = 'Popular';
+                }
+
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <span class="product-badge ${badgeClass}">${badgeText}</span>
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=Imagen+No+Disponible'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">${product.brand.toUpperCase()}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-actions">
+                            <a href="https://wa.me/56941446141?text=Hola,%20me%20interesa%20el%20producto:%20${encodeURIComponent(product.name)}" class="btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consultar
+                            </a>
+                        </div>
+                    </div>
+                `;
+
+                productsGrid.appendChild(productCard);
+            });
+
+            if (currentView === 'list') {
+                productsGrid.classList.add('list-view');
+            } else {
+                productsGrid.classList.remove('list-view');
+            }
+        }
+
+        function applyFilters() {
+            const selectedCategories = Array.from(document.querySelectorAll('input[id^="cat-"]:checked')).map(cb => cb.value);
+            const selectedBrands = Array.from(document.querySelectorAll('input[id^="brand-"]:checked')).map(cb => cb.value);
+            const selectedConditions = Array.from(document.querySelectorAll('input[id^="cond-"]:checked')).map(cb => cb.value);
+            const searchTerm = document.getElementById('headerSearch') ? document.getElementById('headerSearch').value.toLowerCase() : '';
+
+            filteredProducts = fishingData.filter(product => {
+                if (selectedCategories.length > 0 && !selectedCategories.includes(product.category)) return false;
+                if (selectedBrands.length > 0 && !selectedBrands.includes(product.brand)) return false;
+                if (selectedConditions.length > 0 && !selectedConditions.includes(product.condition)) return false;
+                if (searchTerm && !product.name.toLowerCase().includes(searchTerm) && 
+                    !product.brand.toLowerCase().includes(searchTerm) && 
+                    !product.description.toLowerCase().includes(searchTerm)) return false;
+                return true;
+            });
+
+            currentPage = 1;
+            renderProducts();
+            updatePagination();
+            updateResultCount();
+            updateActiveFilters();
+        }
+
+        function clearFilters() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            applyFilters();
+        }
+
+        function updateResultCount() {
+            document.getElementById('resultCount').textContent = filteredProducts.length;
+        }
+
+        function updateActiveFilters() {
+            const container = document.getElementById('activeFilters');
+            container.innerHTML = '';
+            
+            const selectedCategories = Array.from(document.querySelectorAll('input[id^="cat-"]:checked'));
+            const selectedBrands = Array.from(document.querySelectorAll('input[id^="brand-"]:checked'));
+            const selectedConditions = Array.from(document.querySelectorAll('input[id^="cond-"]:checked'));
+            
+            selectedCategories.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+            
+            selectedBrands.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+            
+            selectedConditions.forEach(filter => {
+                const tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filter.nextElementSibling.textContent} <i class="fas fa-times" onclick="removeFilter('${filter.id}')"></i>`;
+                container.appendChild(tag);
+            });
+        }
+
+        function removeFilter(id) {
+            document.getElementById(id).checked = false;
+            applyFilters();
+        }
+
+        function sortProducts() {
+            const sortValue = document.getElementById('sortSelect').value;
+            
+            filteredProducts.sort((a, b) => {
+                switch(sortValue) {
+                    case 'name-az':
+                        return a.name.localeCompare(b.name);
+                    case 'name-za':
+                        return b.name.localeCompare(a.name);
+                    case 'newest':
+                        return b.id - a.id;
+                    default:
+                        return 0;
+                }
+            });
+            
+            currentPage = 1;
+            renderProducts();
+            updatePagination();
+        }
+
+        function updatePagination() {
+            const pagination = document.getElementById('pagination');
+            const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+            
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            
+            let paginationHTML = '';
+            paginationHTML += `<button class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i> Anterior</button>`;
+            
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    paginationHTML += `<button class="pagination-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    paginationHTML += `<button class="pagination-btn" disabled>...</button>`;
+                }
+            }
+            
+            paginationHTML += `<button class="pagination-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Siguiente <i class="fas fa-chevron-right"></i></button>`;
+            pagination.innerHTML = paginationHTML;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderProducts();
+            updatePagination();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function setView(view) {
+            currentView = view;
+            const grid = document.getElementById('productsGrid');
+            const buttons = document.querySelectorAll('.view-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            if (view === 'list') {
+                grid.classList.add('list-view');
+            } else {
+                grid.classList.remove('list-view');
+            }
+        }
+
+        function toggleFilters() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initCatalog();
+
+            // Buscar al presionar Enter en el header
+            const hs = document.getElementById('headerSearch');
+            if (hs) {
+                hs.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') applyFilters();
+                });
+            }
+
+            // Botón de búsqueda en header
+            const searchBtn = document.querySelector('.search-btn');
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    applyFilters();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
