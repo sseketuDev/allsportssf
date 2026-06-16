@@ -535,40 +535,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Efecto de escritura para el hero
     const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        const highlightedText = heroTitle.querySelector('.highlight').textContent;
-        const restOfText = originalText.split(highlightedText).join('');
-        
-        // Resetear para la animación
+    if (heroTitle && heroTitle.querySelector('.highlight')) {
+        const highlightSpan = heroTitle.querySelector('.highlight');
+        const highlightedText = highlightSpan.textContent;
+        const fullHTML = heroTitle.innerHTML;
+        const plainPart = fullHTML.split(highlightSpan.outerHTML)[0];
+
         heroTitle.innerHTML = '';
-        
-        // Animar el texto
+
         let charIndex = 0;
         function typeWriter() {
-            if (charIndex < restOfText.length) {
-                heroTitle.innerHTML += restOfText.charAt(charIndex);
+            if (charIndex < plainPart.length) {
+                heroTitle.innerHTML += plainPart.charAt(charIndex);
                 charIndex++;
                 setTimeout(typeWriter, 50);
             } else {
-                // Agregar el texto resaltado con animación
-                const highlightSpan = document.createElement('span');
-                highlightSpan.className = 'highlight';
-                highlightSpan.textContent = highlightedText;
-                highlightSpan.style.opacity = '0';
-                highlightSpan.style.transform = 'scale(0.8)';
-                heroTitle.appendChild(highlightSpan);
-                
-                // Animar el texto resaltado
+                const newSpan = document.createElement('span');
+                newSpan.className = 'highlight';
+                newSpan.textContent = highlightedText;
+                newSpan.style.opacity = '0';
+                newSpan.style.transform = 'scale(0.8)';
+                heroTitle.appendChild(newSpan);
+
                 setTimeout(() => {
-                    highlightSpan.style.transition = 'all 0.5s ease-out';
-                    highlightSpan.style.opacity = '1';
-                    highlightSpan.style.transform = 'scale(1)';
+                    newSpan.style.transition = 'all 0.5s ease-out';
+                    newSpan.style.opacity = '1';
+                    newSpan.style.transform = 'scale(1)';
                 }, 300);
             }
         }
-        
-        // Iniciar animación después de un breve delay
+
         setTimeout(typeWriter, 500);
     }
 
@@ -586,16 +582,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Efectos hover en tarjetas de producto
+    // Efectos hover en tarjetas de producto (solo escala la foto, no rota el contenedor)
     productCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            const image = this.querySelector('.product-image');
-            image.style.transform = 'scale(1.1) rotate(5deg)';
+            const img = this.querySelector('.product-image img');
+            if (img) img.style.transform = 'scale(1.08)';
         });
-        
+
         card.addEventListener('mouseleave', function() {
-            const image = this.querySelector('.product-image');
-            image.style.transform = 'scale(1) rotate(0)';
+            const img = this.querySelector('.product-image img');
+            if (img) img.style.transform = 'scale(1)';
         });
     });
 
